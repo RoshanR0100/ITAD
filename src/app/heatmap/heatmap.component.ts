@@ -29,7 +29,8 @@ export class HeatmapComponent implements OnInit {
         '1.0': '#c24039' // highest red
       };
       heatmap: any = null; // heatmap instance
-      coordinates: Array<Coordinate> = []; // heatmap coordinates array
+  coord: any; // heatmap coordinates array
+  coordinates: Array<Coordinates> = [];
       heatmapContainer: HTMLElement;  // heatmap container HTML element
 
     constructor( private service: ApiserviceService ){
@@ -46,11 +47,18 @@ export class HeatmapComponent implements OnInit {
           gradient: this.gradientCfg,
           backgroundColor: 'inherit'
       };  
-      this.service.getData()
-        this.heatmap = h337.create(heatmapConfig); // creating the instance
-        this.coordinates = this.service.data.map(a=> ({x:a.x, y:a.y, value:a.weight } as Coordinate));
-        
-        this.heatmap.setData({ max: 30, data: this.coordinates }); // passing the dummy coordinates
+      this.heatmap = h337.create(heatmapConfig); // creating the instance
+      var result = this.service.getData().subscribe(e => {
+        this.coord = e
+        this.coordinates = this.coord.map(e => ({ x: e.x, y: e.y, value: 1, timestamp: e.timestamp }))
+        console.log(this.coordinates);
+this.heatmap.setData({ max: 30, data: this.coordinates });
+      }
+
+      );
+      
+      
+         // passing the dummy coordinates
       
     }
       

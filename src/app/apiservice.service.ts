@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Url } from 'url';
 
 @Injectable()
@@ -19,17 +19,16 @@ export class ImgData{
 export class ApiserviceService {
   imgdata: ImgData[]
   data: LocationPoint[]
-  constructor(private httpClient: HttpClient) { }
+  private headers: HttpHeaders;
+  private accessPointUrl: string = 'https://localhost:44378/api/Submissions'
 
-  async getData(){
-      // this.httpClient.get("").toPromise().then(result=>{
+  constructor(private httpClient: HttpClient) { 
+    this.headers = new HttpHeaders({ 'Content-Type': 'application/json;charset = utf8' })
+  }
 
-      // });
-      this.data = new Array<LocationPoint>();
-      this.data.push(new LocationPoint(270, 270, 1));
+  getData() {
+    console.log('1234')
+    return this.httpClient.get(this.accessPointUrl, { headers: this.headers });
   }
-  async getImg(){
-    this.imgdata = new Array<ImgData>();
-    this.imgdata.push(new ImgData("this is a string", "this is also a string"));
-  }
+
 }
