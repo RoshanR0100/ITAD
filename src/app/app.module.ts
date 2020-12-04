@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AppRoutingModule } from './app-routing';
 import { AppComponent } from './app.component';
 import { HeatmapComponent } from './heatmap/heatmap.component';
@@ -21,7 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     HttpClientModule,
     

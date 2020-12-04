@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-clips',
   templateUrl: './clips.component.html',
-  styleUrls: ['./clips.component.css']
+  styleUrls: ['./clips.component.css'],
+  providers:[ApiserviceService]
 })
 export class ClipsComponent implements OnInit {
 
-  constructor( private firestore: AngularFirestore) { }
+  imgs = []
+  constructor( public service: ApiserviceService) {
+    this.imgs.push(this.service.getImg);
+   }
+
+   
 
   ngOnInit() {
-
+    
   }
+
+  
 
 }
