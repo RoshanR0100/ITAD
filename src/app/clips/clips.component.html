@@ -1,11 +1,9 @@
 <div class="container">
-    <table>
-    
-         <tbody>
-             <tr *ngFor="let img of imgs">
-                <td>{{this.service.getImg()}}</td> 
-            </tr>
-        </tbody>
-    
-</table>
+  <div *ngFor="let img of imgs">
+    <video width="320" height="240" controls>
+      <source src="{{img}}"
+              type="video/mp4" />
+    </video>
+  </div>
+
 </div>

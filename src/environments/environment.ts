@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyD36RfkEmwusK6zQvs0EgGgJ79dJEpXw_0",
-    authDomain: "itad-glasskat.firebaseapp.com",
-    databaseURL: "https://itad-glasskat.firebaseio.com",
-    projectId: "itad-glasskat",
-    storageBucket: "itad-glasskat.appspot.com",
-    messagingSenderId: "160829393641",
-    appId: "1:160829393641:web:eac1ad46ec46d02491be78",
-    measurementId: "G-0YGM6B3KJZ"
+    apiKey: "AIzaSyBJ8_w4KjwSESwdTQcPs0ZvQsqgtERU8I0",
+    authDomain: "mcsv-firebase-service.firebaseapp.com",
+    databaseURL: "https://mcsv-firebase-service.firebaseio.com/",
+    projectId: "mcsv-firebase-service",
+    storageBucket: "mcsv-firebase-service.appspot.com",
+    messagingSenderId: "1029482459631",
+    appId: "1:1029482459631:web:f1d0a6d01a217dec62061a",
+    measurementId: "G-CJXF5B9CCG"
   }
   
 };

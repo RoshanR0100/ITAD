@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
+import { ClipsService } from '../clips.service';
 
 @Component({
   selector: 'app-clips',
@@ -9,9 +10,12 @@ import { ApiserviceService } from '../apiservice.service';
 })
 export class ClipsComponent implements OnInit {
 
-  imgs = []
-  constructor( public service: ApiserviceService) {
-    this.imgs.push(this.service.getImg);
+  imgs: string[] = []
+  res: any;
+  constructor(public service: ClipsService) {
+    this.res = service.getClipUrl().then(e => {
+      this.imgs = e;
+    })
    }
 
    
