@@ -4,8 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\clips",
+    "\\src\\app\\heatmap",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\apiservice.service.ts",
+  "SelectedNode": "\\src\\app\\clips.service.ts",
   "PreviewInSolutionExplorer": false
 }

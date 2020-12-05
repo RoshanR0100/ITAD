@@ -31,4 +31,8 @@ export class ApiserviceService {
     return this.httpClient.get(this.accessPointUrl, { headers: this.headers });
   }
 
+  deleteData() {
+    return this.httpClient.delete(this.accessPointUrl, { headers: this.headers });
+  }
+
 }
